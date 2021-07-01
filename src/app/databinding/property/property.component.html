@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Property Binding</h1>
+    <p>Username : <span [innerText]="username"></span></p>
+    <p>Age : <span [innerText]="age"></span></p>
+    <p>Email : <span [innerText]="email"></span></p>
+    <p>Is Married : <span [innerText]="isMarried"></span></p> <br>
+    <input type="text" [value]="email">
+</div>
+
+
+<div class="container">
+    <h1>Data Binding with Interpolation</h1>
+    <p>Username : {{username}}</p>
+    <p>Age : {{age}}</p>
+    <p>Email : {{email}}</p>
+    <p>Is Married : {{isMarried}} <br>
+    <input type="text" value="{{email}}">
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,10 @@ import { ProductsModule } from './products/products.module';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PropertyComponent } from './databinding/property/property.component';
+import { StylebindingComponent } from './databinding/stylebinding/stylebinding.component';
+import { EventComponent } from './databinding/event/event.component';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +24,16 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FooterComponent,
     HomeComponent,
     UsersComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PropertyComponent,
+    StylebindingComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductsModule
+    ProductsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

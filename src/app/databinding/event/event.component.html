@@ -1,0 +1,17 @@
+
+<div class="container">
+    <h1>Event Binding</h1>
+    Username  : <input type="text" (input)="onInputChage($event)" class="form-control"> <br><br>
+    <button (click)="onSave($event)" class="btn btn-primary" >Save</button>
+</div>
+<!-- manual way of two way databinding  property binding [] + event binding () -->
+<div class="container mt-3">
+    <p>{{message}}</p>
+    Message <input type="text" (input)="onDateChange($event)" class="form-control">
+</div>
+
+<!-- two way databinding -->
+<div class="container">
+    <p>{{data}}</p>
+    Data : <input type="text" name="data" [(ngModel)]="data" class="form-control">
+</div>

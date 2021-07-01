@@ -8,6 +8,9 @@ import { CreateComponent } from './products/create/create.component';
 import { UpdateComponent } from './products/update/update.component';
 import { DetailsComponent } from './products/details/details.component';
 import { SearchComponent } from './products/search/search.component';
+import { PropertyComponent } from './databinding/property/property.component';
+import { StylebindingComponent } from './databinding/stylebinding/stylebinding.component';
+import { EventComponent } from './databinding/event/event.component';
 
 const routes: Routes = [
   { path:'' , redirectTo:'/home', pathMatch:'full' },
@@ -20,6 +23,11 @@ const routes: Routes = [
     { path:'details' , component:DetailsComponent },
     { path:'search' , component:SearchComponent },
   ] },
+  { path:'databinding' , children:[
+    { path:'property', component:PropertyComponent},
+    { path:'style', component:StylebindingComponent},
+    { path:'event', component:EventComponent}
+  ]},
   { path:'**' , component:NotFoundComponent },
 ];
 

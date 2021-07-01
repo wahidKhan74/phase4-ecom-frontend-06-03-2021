@@ -1,0 +1,21 @@
+<div class="container">
+    <div [style.background-color]="color.YELLOW" [style.padding.px]="'30'"class="container">
+        <h1 [style.color]="'red'">Style Binding  </h1>
+        <p [style.color]="color.BLUE">Username : {{username}}</p>
+        <p [style.color]="color.ORANGE" [style.font-size.px]="'24'">Age : {{age}}</p>
+        <p>Email : {{email}}</p>
+        <p>Is Married : {{isMarried}} <br>
+        <input type="text" value="{{email}}">
+    </div>
+</div>
+
+<div class="container" [class]="'bg-one'">
+    <div class="container" [className]="'bg-two'">
+        <h1 [class]="active ? 'bg-one' : 'bg-three'" >Class Binding</h1>
+        <p >Username : {{username}}</p>
+        <p >Age : {{age}}</p>
+        <p [class]="'bg-one bg-two'">Email : {{email}}</p>
+        <p>Is Married : {{isMarried}} <br>
+        <input type="text" value="{{email}}">
+    </div>
+</div>
