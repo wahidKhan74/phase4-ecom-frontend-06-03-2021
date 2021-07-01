@@ -14,6 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PropertyComponent } from './databinding/property/property.component';
 import { StylebindingComponent } from './databinding/stylebinding/stylebinding.component';
 import { EventComponent } from './databinding/event/event.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { EventComponent } from './databinding/event/event.component';
     NotFoundComponent,
     PropertyComponent,
     StylebindingComponent,
-    EventComponent
+    EventComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,

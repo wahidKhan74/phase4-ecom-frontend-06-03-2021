@@ -11,11 +11,15 @@ import { SearchComponent } from './products/search/search.component';
 import { PropertyComponent } from './databinding/property/property.component';
 import { StylebindingComponent } from './databinding/stylebinding/stylebinding.component';
 import { EventComponent } from './databinding/event/event.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 const routes: Routes = [
   { path:'' , redirectTo:'/home', pathMatch:'full' },
   { path:'home' , component:HomeComponent },
   { path:'users' , component:UsersComponent },
+  { path:'forms' , children:[
+    { path:'template' , component:TemplateFormComponent}
+  ] },
   { path:'products' , children:[
     { path:'' , component:ProductsComponent },
     { path:'create' , component:CreateComponent },

@@ -1,0 +1,102 @@
+<div class="container">
+    <form #exampleForm="ngForm" novalidate>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="firstName">First Name </label>
+              <input type="text" class="form-control" name="firstName" #firstName="ngModel" [(ngModel)]="userObj.firstName"
+               id="firstName" required minlength="2" maxlength="15">
+               <small *ngIf="hasError(firstName)" [class]="hasError(firstName) ? 'has-error' :''">
+                <div *ngIf="firstName.errors">
+                    <span *ngIf="firstName.errors.required">First Name is a required field</span>
+                    <span *ngIf="firstName.errors.minlength">First Name is a min 2 char long field</span>
+                    <span *ngIf="firstName.errors.maxlength">First Name is a max 16 char long field</span>
+                </div>
+              </small>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" [(ngModel)]="userObj.lastName" name="lastName"
+               id="lastName" required minlength="2" maxlength="15" #lastName="ngModel">
+               <small *ngIf="hasError(lastName)" [class]="hasError(lastName) ? 'has-error' :''">
+                <div *ngIf="lastName.errors">
+                    <span *ngIf="lastName.errors.required">Last Name is a required field</span>
+                    <span *ngIf="lastName.errors.minlength">Last Name is a min 2 char long field</span>
+                    <span *ngIf="lastName.errors.maxlength">Last Name is a max 16 char long field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="userObj.email" id="email" 
+            #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" >
+            <small *ngIf="hasError(email)" [class]="hasError(email) ? 'has-error' :''"   >
+                <div *ngIf="email.errors">
+                    <span *ngIf="email.errors.required">Email is a required field</span>
+                    <span *ngIf="email.errors.pattern">Email is a not a valid email</span>
+                </div>
+              </small>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="userObj.password"
+             id="password"  #password="ngModel" required minlength="6" maxlength="15">
+             <small *ngIf="hasError(password)" [class]="hasError(password) ? 'has-error' :''">
+                <div *ngIf="password.errors">
+                    <span *ngIf="password.errors.required">Password is a required field</span>
+                    <span *ngIf="password.errors.minlength">Password is a min 6 char long field</span>
+                    <span *ngIf="password.errors.maxlength">Password is a max 16 char long field</span>
+                </div>
+              </small>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="city">City</label>
+            <input type="text" class="form-control" [(ngModel)]="userObj.city"  name="city" id="city">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="state">State</label>
+            <select id="state" name="state" [(ngModel)]="userObj.state" #state="ngModel"
+             class="form-control" required>
+                <option value="NY">New York</option>
+                <option value="LA">Los Angeles</option>
+                <option value="CH">Chicago</option>
+                <option value="HT">Houston</option>
+            </select>
+            <small *ngIf="hasError(state)" [class]="hasError(state) ? 'has-error' :''"   >
+                <div *ngIf="state.errors">
+                    <span *ngIf="state.errors.required">State is a required field</span>
+                </div>
+              </small>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="zipcode">Zip</label>
+            <input type="text" class="form-control" #zipcode="ngModel" [(ngModel)]="userObj.zipcode" 
+            name="zipcode" id="zipcode" required>
+            <small *ngIf="hasError(zipcode)" [class]="hasError(zipcode) ? 'has-error' :''"   >
+                <div *ngIf="zipcode.errors">
+                    <span *ngIf="zipcode.errors.required">zipcode is a required field</span>
+                </div>
+              </small>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox"  required #agree="ngModel" [(ngModel)]="userObj.agree" id="agree" name="agree">
+            <label class="form-check-label" for="agree">
+                Agree to terms and conditions
+            </label>
+            <small *ngIf="hasError(agree)" [class]="hasError(agree) ? 'has-error' :''"   >
+                <div *ngIf="agree.errors">
+                    <span *ngIf="agree.errors.required">agree is a required field</span>
+                </div>
+              </small>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="onSave(exampleForm)">Sign in</button>
+      </form>
+
+
+</div>
