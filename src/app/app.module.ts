@@ -16,6 +16,8 @@ import { StylebindingComponent } from './databinding/stylebinding/stylebinding.c
 import { EventComponent } from './databinding/event/event.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './api.service';
 
 
 @NgModule({
@@ -38,9 +40,10 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     AppRoutingModule,
     ProductsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
