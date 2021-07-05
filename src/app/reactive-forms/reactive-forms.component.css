@@ -1,0 +1,11 @@
+.container {
+    border: 3px solid rgb(0, 0, 0);
+    background-color: #e9ec1644;
+    padding: 20px;
+    margin: 30px;
+}
+
+.has-error{
+    color: red;
+    font-weight: 400;
+}

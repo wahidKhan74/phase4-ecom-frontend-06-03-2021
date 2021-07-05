@@ -12,13 +12,15 @@ import { PropertyComponent } from './databinding/property/property.component';
 import { StylebindingComponent } from './databinding/stylebinding/stylebinding.component';
 import { EventComponent } from './databinding/event/event.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 const routes: Routes = [
   { path:'' , redirectTo:'/home', pathMatch:'full' },
   { path:'home' , component:HomeComponent },
   { path:'users' , component:UsersComponent },
   { path:'forms' , children:[
-    { path:'template' , component:TemplateFormComponent}
+    { path:'template' , component:TemplateFormComponent},
+    { path:'reactive' , component:ReactiveFormsComponent}
   ] },
   { path:'products' , children:[
     { path:'' , component:ProductsComponent },

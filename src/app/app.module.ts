@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { PropertyComponent } from './databinding/property/property.component';
 import { StylebindingComponent } from './databinding/stylebinding/stylebinding.component';
 import { EventComponent } from './databinding/event/event.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 
 @NgModule({
@@ -29,13 +30,15 @@ import { TemplateFormComponent } from './template-form/template-form.component';
     PropertyComponent,
     StylebindingComponent,
     EventComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProductsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
